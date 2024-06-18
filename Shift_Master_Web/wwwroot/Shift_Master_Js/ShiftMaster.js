@@ -49,7 +49,7 @@ $(document).ready(function () {
     $(ShiftMasterVariables.ToolbarbtnEdit).addClass("disabled-icon");
    $( ShiftMasterVariables.ToolbarbtnView).addClass("disabled-icon");
     $(ShiftMasterVariables.ToolbarbtnDelete).addClass("disabled-icon"); 
-    $(ShiftMasterVariables.ToolbarbtnDelete).addClass("disabled-icon"); 
+ 
 
    
 
