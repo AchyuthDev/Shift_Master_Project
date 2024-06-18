@@ -1,0 +1,131 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-image: url('../images/workswareerp.jpg');*/
+
+    background-color: blueviolet;
+    /*background-size: cover;*/ /* Make the background cover the entire area */
+    /*background-position: center;*/ /* Center the background image */
+    /*background-repeat: no-repeat;*/ /* Prevent the background image from repeating */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*margin: 0;*/ /* Remove default margin */
+    /*padding: 0;*/ /* Remove default padding */
+    /*height: 100vh;*/ /* Ensure the body takes full viewport height */
+}
+
+.form {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    padding-bottom: 50px;
+    gap: 10px;
+}
+
+input:focus {
+    border-color: #898ae4;
+}
+
+.user img {
+    width: 50px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+    .field input {
+        width: 100%;
+        outline: none;
+        border: 2px solid #93899e91;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+button {
+    border: none;
+    outline: none;
+    background-color: #898ae4;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    position: relative;
+    top: -18px;
+}
+
+    button:hover {
+        opacity: 1;
+    }
+
+.form-check {
+    position: relative;
+    left: -107px;
+    top: -3px;
+}
+
+.ForgotPassword {
+    position: relative;
+    top: -35px;
+    left: 112px;
+}
+
+#forgotpassword {
+    text-decoration: underline;
+}
+
+#password {
+    position: relative;
+    top: -10px;
+}
+
+.noaccount {
+    position: relative;
+    top: -13px;
+}
+
+#Register {
+    background-color: lightgreen;
+}
+
+#emailError {
+    display: none;
+    color: red;
+    font-size: smaller;
+}
+
+#passwordError {
+    color: red;
+    display: none;
+    font-size: smaller;
+}
+
+#InvalidErrorMessage {
+    position: relative;
+    top: -22px;
+    display: none;
+}
+#nameError {
+    color: red;
+    display: none;
+    font-size: smaller;
+}
+#ConformpasswordError {
+    color: red;
+    display: none;
+    font-size: smaller;
+}

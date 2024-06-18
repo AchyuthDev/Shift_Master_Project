@@ -1,0 +1,272 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\assets\fonts\boxicons.svg" />
+    <Content Remove="wwwroot\assets\fonts\boxicons.woff2" />
+    <Content Remove="wwwroot\assets\img\banner-img-01.svg" />
+    <Content Remove="wwwroot\assets\img\banner-img-02.svg" />
+    <Content Remove="wwwroot\assets\img\pricing.svg" />
+    <Content Remove="wwwroot\assets\img\work.svg" />
+    <Content Remove="wwwroot\assets\js\bootstrap.bundle.min.js" />
+    <Content Remove="wwwroot\assets\js\custom.js" />
+    <Content Remove="wwwroot\assets\js\fslightbox.js" />
+    <Content Remove="wwwroot\assets\js\isotope.pkgd.js" />
+    <Content Remove="wwwroot\assets\js\jquery.min.js" />
+    <Content Remove="wwwroot\assets\js\templatemo.js" />
+    <Content Remove="wwwroot\assets\js\templatemo.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" Link="wwwroot\css\bootstrap-grid.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.css.map" Link="wwwroot\css\bootstrap-grid.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css" Link="wwwroot\css\bootstrap-grid.min.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css.map" Link="wwwroot\css\bootstrap-grid.min.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css" Link="wwwroot\css\bootstrap-grid.rtl.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css.map" Link="wwwroot\css\bootstrap-grid.rtl.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css" Link="wwwroot\css\bootstrap-grid.rtl.min.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css.map" Link="wwwroot\css\bootstrap-grid.rtl.min.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css" Link="wwwroot\css\bootstrap-reboot.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css.map" Link="wwwroot\css\bootstrap-reboot.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css" Link="wwwroot\css\bootstrap-reboot.min.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css.map" Link="wwwroot\css\bootstrap-reboot.min.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css" Link="wwwroot\css\bootstrap-reboot.rtl.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css.map" Link="wwwroot\css\bootstrap-reboot.rtl.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css" Link="wwwroot\css\bootstrap-reboot.rtl.min.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css.map" Link="wwwroot\css\bootstrap-reboot.rtl.min.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css" Link="wwwroot\css\bootstrap-utilities.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css.map" Link="wwwroot\css\bootstrap-utilities.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css" Link="wwwroot\css\bootstrap-utilities.min.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css.map" Link="wwwroot\css\bootstrap-utilities.min.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css" Link="wwwroot\css\bootstrap-utilities.rtl.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css.map" Link="wwwroot\css\bootstrap-utilities.rtl.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css" Link="wwwroot\css\bootstrap-utilities.rtl.min.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css.map" Link="wwwroot\css\bootstrap-utilities.rtl.min.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.css" Link="wwwroot\css\bootstrap.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.css.map" Link="wwwroot\css\bootstrap.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.min.css" Link="wwwroot\css\bootstrap.min.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map" Link="wwwroot\css\bootstrap.min.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css" Link="wwwroot\css\bootstrap.rtl.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css.map" Link="wwwroot\css\bootstrap.rtl.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css" Link="wwwroot\css\bootstrap.rtl.min.css">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+    <Content Include="C:\Users\Achyuth\.nuget\packages\bootstrap\5.3.3\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css.map" Link="wwwroot\css\bootstrap.rtl.min.css.map">
+      <Private>False</Private>
+      <NuGetPackageVersion>5.3.3</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <Pack>false</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\fonts\boxicons.svg" />
+    <None Include="wwwroot\assets\fonts\boxicons.woff2" />
+    <None Include="wwwroot\assets\img\banner-img-01.svg" />
+    <None Include="wwwroot\assets\img\banner-img-02.svg" />
+    <None Include="wwwroot\assets\img\pricing.svg" />
+    <None Include="wwwroot\assets\img\work.svg" />
+    <None Include="wwwroot\assets\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\assets\js\custom.js" />
+    <None Include="wwwroot\assets\js\fslightbox.js" />
+    <None Include="wwwroot\assets\js\isotope.pkgd.js" />
+    <None Include="wwwroot\assets\js\jquery.min.js" />
+    <None Include="wwwroot\assets\js\templatemo.js" />
+    <None Include="wwwroot\assets\js\templatemo.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+  </ItemGroup>
+
+</Project>

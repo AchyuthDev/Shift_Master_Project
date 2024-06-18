@@ -1,0 +1,269 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kendo UI Grid Example</title>
+    <!-- Include Kendo UI styles -->
+     <link href="https://kendo.cdn.telerik.com/2022.1.119/styles/kendo.default-v2.min.css" rel="stylesheet" />
+    <link href="~/css/ShiftMaster.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2023.3.1119/styles/kendo.default-v2.min.css" />
+    <script src="https://kendo.cdn.telerik.com/2023.3.1119/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2023.3.1119/js/kendo.all.min.js"></script>
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include Kendo UI scripts -->
+    <script src="https://kendo.cdn.telerik.com/2022.1.119/js/kendo.all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="~/Shift_Master_Js/ShiftMaster.js"></script> 
+
+        <script type="text/javascript">
+            function handleIconClick(event) {
+                event.stopPropagation(); // Prevent the click event from propagating to the header
+            var columnName = event.target.getAttribute('data-column');
+            console.log("Header icon clicked for column:", columnName);
+            // Perform your custom actions here
+        }
+        </script>
+   
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="~/assets/img/apple-icon.png" height="30" width="30" alt="Logo">
+                <span class="text-dark">Purple</span>
+                <span class="text-primary">Buzz</span>
+            </div>
+            <button class="navbar-toggler" type="button">
+                <span class="material-icons">menu</span>
+            </button>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">UsersList</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">UploadFile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">RestaurentComplent</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <input type="hidden" id="ApiBaseAdress" value="@ViewBag.ApiBaseAddress" />
+    <input type="hidden" id="hiddenShiftId" value="" />
+
+     <!-- ToolBar design code -->
+    <div class="toolbar">
+        <div class="nameToolbar">
+            <h2>Shift</h2>
+        </div>
+       
+        <div class="icons-grid-toolbar">
+
+            <i id="btnAdd" class='material-icons'>add</i>
+            <i id="ToolbarbtnEdit" class='material-icons'>edit</i>
+            <i id="btnGrid" class='material-icons'>grid_on</i>
+            <i id="btnDelete" class='material-icons'>delete</i>
+            <i id="btnRefresh" class='material-icons'>refresh</i>
+            <div id="ExportPdfExcel">
+             <h4 id="export">EXPORT</h4>
+            <i id="btnDropdown" class='material-icons dropdown-icon'>arrow_drop_down</i>
+                <div id="dropdownMenu" class="dropdown-content">
+                    <a href="#" id="exportToExcel">Export to Excel All</a>
+                    <a href="#" id="exportToExcelSelected">Export to Excel Selected</a>
+                </div>
+            </div>
+           
+            <div class="toolbar-searchtxt">
+                <input type="text" id="txtSearch" class="form-control" placeholder="Shift Name" />
+                <i id="searchicon" class='material-icons'>search</i>
+               @*  <i id="toolbarfiltericon" class='material-icons'>filter_alt</i> *@
+            </div>
+
+        </div>
+      
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="ErrorMessage">
+            <div>
+                <h3 id="Errorheading">Error!</h3>
+                <p id="MessageText">Plese Select 0ne Shift Only To Edit</p>
+                <button class="close-button btn-close">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom modal for delete confirmation -->
+    <div id="customModal">
+        <h4>Are you sure you want to delete?</h4>
+        <button id="btnConformDelete" class="delete"> Yes Delete</button>
+        <button id="btnConfirmCancel" class="cancel">Cancel</button>
+    </div>
+   
+    
+    <div id="grid" class="Custom-class"></div>
+
+    <!-- Dialog Box -->
+    <div class="dialog-box" id="dialog-box">
+        <div class="icon-btn" id="edit-icon">
+            <input type="hidden"  id="hiddenfield"/>
+            <i id="IdValue" class="material-icons">edit</i>Edit
+        </div>
+        <div class="icon-btn" id="view-icon">
+            <i  class='material-icons'>grid_on</i><b></b>View
+        </div>
+        <div class="icon-btn" id="delete-icon">
+            <i class="material-icons">delete</i>Delete
+        </div>
+    </div>
+ 
+    <div id="AddPopUp" style="display:none;background-color:#fafafa">
+        <div class="ValidationErrors" style="background-color:pink">
+            <div>
+                <span id="ShiftNameErrorIcon" class="material-icons material-icons-outlined Iconcolor">error_outline</span>
+                <span id="ShiftNameErrorMsg" class="invalid-feedback textColor">Please Enter Shift Name </span>
+            </div>
+            <div>
+                <span id="ShiftStartTimeErrorIcon" class="material-icons material-icons-outlined Iconcolor">error_outline</span>
+                <span id="ShiftStartTimeErrorMsg" class="invalid-feedback textColor">Please Select Shift Start Time </span>
+            </div>
+            <div>
+                <span id="ShiftEndTimeErrorIcon" class="material-icons material-icons-outlined Iconcolor">error_outline</span>
+                <span id="ShiftEndTimeErrorMsg" class="invalid-feedback textColor">Please Select Shift End Time </span>
+            </div>
+            
+           
+        </div>
+       
+      <br />
+       
+
+        <div class="label">
+            <div class="lblfield">
+                <label class="required-label" id="shiftNameLabel">Shift Name</label>
+                <input type="text" class="form-control" id="shiftname" />
+                <span id="ShiftNameIcon" class="material-icons material-icons-outlined Iconcolor">error_outline</span>
+
+            </div>
+            <div class="lblfield">
+                <label style="color:dodgerblue">Shift Time</label>
+
+            </div>
+            <div class="lblfield">
+                <label class="required-label">Shift Start Time</label>
+                <input type="time" class="form-control" id="shiftStartTime" />
+                <span id="ShiftStartTimeIcon" class="material-icons material-icons-outlined Iconcolor">error_outline</span>
+               
+
+            </div>
+            <div class="lblfield">
+                <label> Total Shift Time</label>
+                <input type="text" class="form-control" id="TotalShiftTime" readonly />
+               
+
+            </div>
+          
+            <div class="lblfield">
+                <label style="color:dodgerblue">Lunch Time</label>
+
+            </div>
+            <div class="lblfield">
+                <label >Lunch Start Time</label>
+                <input type="time" class="form-control" id="lunchStartTime" />
+
+            </div>
+            <div class="lblfield">
+                <label> Total Lunch Time</label>
+                <input type="text" class="form-control" id="TotalLunchTime" readonly />
+
+            </div>
+            <div class="lblfield">
+                <label id="lblRemark"> Remark</label>
+                <textarea id="kendoTextArea" class="form-control"></textarea>
+
+            </div>
+            <div class="lblfield">
+                <label id="lblIsActive"> Active</label>
+                <input type="checkbox" id="chkIsActive" />
+            </div>
+            <div class="lblfield">
+                <label id="lblNightShift"> Night Shift</label>
+                <input type="checkbox" id="chkNightShift" />
+            </div>
+            <div class="lblfield">
+                <label class="required-label" id="lblshiftEndTime">Shift End Time</label>
+                <input type="time" class="form-control" id="shiftEndTime" />
+                <span id="ShiftEndTimeIcon" class="material-icons material-icons-outlined Iconcolor">error_outline</span>
+            </div>
+            <div class="lblfield">
+                <label id="lblLunchEndTime"> Lunch End Time</label>
+               
+                <input type="time" class="form-control" id="LunchEndTime" />
+            </div>
+            <div class="footerButtons">
+               <div>
+                  <button id="btnSave" class="addcustom-button">Save</button>
+                  <button id="btnCancel" class="custom-button1">Cancel</button>
+                </div>
+               
+            </div>
+           
+        </div>
+
+      
+     </div>
+
+
+    <div class="filter-box" id="filter-box">
+         <div class=" filter-icons" id="acending-icon">
+            <!-- Upward arrow -->
+            <i class="material-icons filter">north</i>Sort Ascending
+         </div>
+
+         <div class=" filter-icons" id="decending-icon">
+            <i class="material-icons filter">south</i> Sort Descending 
+         </div>
+
+          <div class=" filter-icons" id="column-icon">
+            
+               <i class="material-icons filter">dehaze</i> Columns
+         </div>
+
+          <div class=" filter-icons" id="filtericon">
+            
+               <i class="material-icons filter">filter_alt</i> Filter
+         </div>
+         
+    </div>
+
+</body>
+</html>

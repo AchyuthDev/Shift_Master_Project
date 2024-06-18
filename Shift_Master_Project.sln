@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34902.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shift_Master_Api", "Shift_Master_Api\Shift_Master_Api.csproj", "{D419AF84-6B14-48DF-8EE1-BD958B982AA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shift_Master_Web", "Shift_Master_Web\Shift_Master_Web.csproj", "{70225B1B-AD25-4848-825E-756EB2C9ED86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D419AF84-6B14-48DF-8EE1-BD958B982AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D419AF84-6B14-48DF-8EE1-BD958B982AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D419AF84-6B14-48DF-8EE1-BD958B982AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D419AF84-6B14-48DF-8EE1-BD958B982AA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70225B1B-AD25-4848-825E-756EB2C9ED86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70225B1B-AD25-4848-825E-756EB2C9ED86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70225B1B-AD25-4848-825E-756EB2C9ED86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70225B1B-AD25-4848-825E-756EB2C9ED86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CED00B4-9672-45E5-94AE-C9C23437A782}
+	EndGlobalSection
+EndGlobal

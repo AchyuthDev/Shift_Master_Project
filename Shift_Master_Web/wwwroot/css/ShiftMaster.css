@@ -1,0 +1,817 @@
+﻿.Custom-class {
+    color: black;
+    /*font-weight: bold;*/
+}
+
+#grid {
+    margin-top: -46px;
+    border: 2px solid white;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 50px;
+    background-color: white;
+    width:97%;
+    left:12px;
+}
+
+
+#btnAdd {
+    font-size:xx-large;
+    font-weight:bold;
+    
+}
+
+
+.material-icons {
+    cursor: pointer;
+}
+
+.action-icons {
+    display: flex;
+    align-items: center;
+}
+
+    .action-icons .material-icons {
+        margin: 0 8px;
+    }
+.k-grid-header th.custom-header {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-weight: 450;
+    padding: 10px;
+    font-size: 1.02rem; /* Use rem units for better scalability */
+}
+.color {
+    color: #30619f;
+}
+.k-grid-toolbar {
+    background-color: white;
+}
+.toolbar-icons .material-icons {
+    margin-right: 25px;  Adjust the value to control the spacing 
+    cursor: pointer;
+}
+
+/* Custom styles for the popup */
+#AddPopUp {
+    padding: 20px;
+    display: none;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+}
+
+.lblfield {
+    margin-bottom: 25px; /* Adjust the spacing between each label if needed */
+}
+
+label {
+    /*font-weight: bold;*/
+    /* Add any other styling you want */
+    /*font-size:large;*/
+   
+    font-weight: 500; /* Semi-bold weight for a modern look */
+    font-size: 1rem; /* Use rem units for better scalability */
+    color: #333; /* Darker color for better readability */
+}
+.required-label::after {
+    content: " *";
+    color: red;
+}
+#shiftname {
+    height: 30px;
+    width:180px;
+    position: relative;
+    left: 65px;
+    padding: 5px 10px; /* Add some padding for better usability */
+    font-size: 16px; /* Increase the font size for better readability */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Round the corners */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Add a subtle inner shadow */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effects */
+}
+.form-control {
+    height: 30px;
+    width: 180px;
+    padding: 5px 10px; /* Add some padding for better usability */
+    font-size: 16px; /* Increase the font size for better readability */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Round the corners */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Add a subtle inner shadow */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus effects */
+}
+/* Add focus effects */
+#shiftname:focus {
+    border-color: #66afe9; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 4px rgba(102, 175, 233, 0.3); /* Reduce the glow effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #shiftname {
+        width: 100%; /* Ensure full width on small screens */
+        max-width: 100%; /* Remove max-width on small screens */
+        left: 0; /* Adjust positioning */
+    }
+}
+#shiftStartTime{
+    width:180px;
+    height:30px;
+    position:relative;
+    left:30px;
+
+}
+#TotalShiftTime {
+   
+    position: relative;
+    left: 40px;
+}
+#lunchStartTime {
+   
+    position: relative;
+    left: 30px;
+}
+#TotalLunchTime{
+   
+    position:relative;
+    left:29px;
+   
+}
+#lblNightShift{
+    position:relative;
+    margin-left:413px;
+    
+    top:-506px;
+}
+#lblshiftEndTime {
+    position: relative;
+    left: 410px;
+    top: -456px;
+}
+#lblLunchEndTime {
+    position: relative;
+    left: 410px;
+    top: -357px;
+}
+#shiftEndTime{
+    width:170px;
+    height:29px;
+    position:relative;
+    left:437px;
+    top:-456px;
+}
+#LunchEndTime {
+    width: 170px;
+    height: 29px;
+    position: relative;
+    left: 437px;
+    top: -357px;
+}
+#chkNightShift {
+    position: relative;
+    left: 65px;
+    top: -507px;
+    border: 2px solid lightgrey; /* Change this to the color you prefer */
+    box-sizing: border-box;
+    width: 20px; /* Change this to the desired width */
+    height: 20px; /* Change this to the desired height */
+}
+
+
+.addcustom-button {
+    position: relative;
+    left: 529px;
+    width: 135px;
+    height: 41px;
+    top: 11px;
+    font-size: 1rem;
+    background-color: #30619f;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+    .addcustom-button:hover {
+        background-color: none;
+        color: white;
+    }
+
+#btnCancel {
+    color: cadetblue;
+    padding: 10px 20px;
+    border: 2px solid lightblue;
+    margin-left: 669px;
+    height: 41px;
+    margin-top: -36px;
+    width: 97px;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1rem;
+}
+
+.footerButtons{
+    display:flex;
+    gap:6px;
+    border:0px solid lightgray;
+    width:783px;
+    margin-left:-20px;
+    height:60px;
+    margin-top:-152px;
+}
+#lblIsActive {
+    position: relative;
+    left: 2px;
+    top: 3px;
+}
+#chkIsActive {
+    position: relative;
+    left: 106px;
+    top: 4px;
+    border: 2px solid lightgrey; /* Change this to the color you prefer */
+    box-sizing: border-box;
+    width: 20px; /* Change this to the desired width */
+    height: 20px; /* Change this to the desired height */
+}
+#lblRemark {
+    position: relative;
+    left: 5px;
+    top: -28px;
+}
+
+#kendoTextArea {
+    height: 70px;
+    width:571px;
+    position:relative;
+    left:96px;
+}
+/* Custom styles for the Kendo UI Window title bar */
+.k-window .k-window-titlebar {
+    background-color: #30619f; /* Change this to your desired color */
+    color: white; /* Change the text color if needed */
+}
+/* Custom styles for the Kendo UI Window title text */
+.k-window .k-window-title {
+    font-size: 24px; /* Change this to your desired font size */
+    font-weight: bold; /* Optional: make the text bold */
+}
+/* Custom styles for the Kendo UI Window border */
+.k-window {
+    border: 1px solid lightgrey; /* Change this to your desired border color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow for a more prominent effect */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Ensure content fits within rounded corners */
+}
+
+/* Custom styles for validation error icon and text */
+.Iconcolor {
+    color: red; /* Change icon color to red */
+    position:relative;
+    top:6px;
+    display:none;
+}
+
+.textColor {
+    color: red; /* Change text color to red */
+    font-size: 1rem; /* Use rem units for better scalability */
+    display: none;
+}
+#ShiftNameErrorIcon {
+    display: none;
+    color:red;
+}
+#ShiftStartTimeErrorIcon {
+    display: none;
+    color: red;
+}
+#ShiftEndTimeErrorIcon {
+    display: none;
+    color: red;
+}
+#ShiftNameIcon {
+    color: red;
+    position: relative;
+    left: 63px;
+    display: none;
+}
+ 
+#ShiftStartTimeIcon {
+    position: relative;
+    left: 27px;
+    display: none;
+    color: red;
+}
+#ShiftEndTimeIcon {
+    position: relative;
+    left: 436px;
+    top: -450px;
+    display: none;
+    color: red;
+}
+/* Custom styles for the Kendo UI TextArea */
+.custom-textarea {
+    width: 50%; /* Full width */
+    height: 70px; /* Desired height */
+    position: relative;
+    top: -35px;
+    left: 170px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust values as needed */
+}
+
+.ValidationErrors {
+    border-radius: 4px; /* Round the corners */
+}
+
+
+
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-brand img {
+        margin-right: 10px;
+    }
+
+    .navbar-brand .text-dark, .navbar-brand .text-primary {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .navbar-brand .text-primary {
+        color: #007bff;
+    }
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+    .navbar-toggler .material-icons {
+        font-size: 24px;
+    }
+
+.navbar-collapse {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    margin-left: 70px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+    .nav-link:hover {
+        color: #007bff;
+    }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse.show {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Dialog box style*/
+.custom-header {
+    text-align: center;
+}
+
+.dialog-box {
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 160px;
+    height: 140px;
+    z-index: 1000;
+}
+
+.close-btn {
+    margin-top: 10px;
+    cursor: pointer;
+    background: #f1f1f1;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.icon-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    /*background: #f1f1f1;*/
+    border: none;
+    padding: 2px 12px;
+    border-radius: 3px;
+    text-align: left;
+    color: #30619f;
+}
+
+.icon-btn i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.material-icons {
+    color: #30619f;
+}
+
+.k-grid-header {
+    background-color:white;
+    font-weight: bold;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+.k-grid {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+/*Toolbar css*/
+.toolbar {
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid white;
+    background-color: white;
+    height: 110px;
+    position: relative;
+    top: -15px;
+    color: #30619f;
+    cursor: pointer;
+}
+.icons-grid-toolbar{
+    display:flex;
+    gap:25px;
+    position:relative;
+    right:-25px;
+    top:37px;
+}
+.nameToolbar {
+    position: relative;
+    left: 28px;
+    color: #30619f;
+    top:11px;
+}
+#btnDropdown{
+    position:relative;
+    font-size:37px;
+    top:-31px;
+    left:56px;
+}
+#txtSearch{
+    width:403px;
+    margin-left:545px;
+    height:38px;
+    margin-top:-3px;
+    position:relative;
+    top:-5px;
+}
+#searchicon {
+    z-index: 200;
+    position: relative;
+    left: -43px;
+}
+}
+/*Succuss Message css*/
+/*.DisplayMessage {
+    background-color: lightgrey;
+    margin-left: -935px;
+    width: 500px;
+    color: darkgreen;
+    height: 56px;
+    margin-top: -59px;
+    border-radius: 4px;*/
+/* transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    box-sizing: border-box;*/
+/*}
+.btn-close {
+    position: relative;
+    left: 468px;
+    top: -36px;
+    
+    background-color: antiquewhite;
+    border: 0px;
+    font-size: 22px;
+    color: black;
+    cursor: pointer;
+}
+
+.Message {
+    margin-left: 14px;
+    margin-top: 17px;
+}*/
+.k-checkbox {
+    margin: 0;
+    padding: 0;
+    line-height: initial;
+    border-width: 1px;
+    border-style: solid;
+    outline: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    -ms-flex: none;
+    flex: none;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    -webkit-appearance: auto;
+}
+/*Expor Drop Dwon Css*/
+#exportContainer {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#btnDropdown {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 30%; /* Position the dropdown below the button */
+    left: 243px; /* Align the dropdown with the left edge of the button */
+    border-radius: 6px;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 8px 12px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #30619f;
+        }
+            
+
+.Shiftname-color {
+    color: #30619f; /* Change text color to red */
+    
+}
+
+/* Custom modal styles */
+#customModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 18%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    border-radius:4px;
+}
+
+    #customModal h4 {
+        margin-top: 0;
+        color: #30619f;
+    }
+
+    #customModal button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #customModal .delete {
+        background: #f44336;
+        color: #fff;
+        border-radius:3px;
+        font-size:1rem;
+    }
+
+    #customModal .cancel {
+        background: #ddd;
+        border-radius: 3px;
+        font-size: 1rem;
+    }
+
+
+
+
+
+/* Disabled icon style */
+.disabled-icon {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+    /*color: grey;*/ /* Optional: make it grey to indicate it's disabled */
+}
+
+/* Overlay to cover the entire page */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display:none;
+   
+}
+
+
+
+.ErrorMessage {
+    background-color: #FFF0F5;
+    width: 520px;
+    height: 64px;
+    margin-left: 375px;
+    margin-top: 19px;
+    border-radius: 4px;
+    padding-block-start: 9px;
+    padding-left: 21px;
+    display:none;
+}
+
+.btn-close {
+   
+    border: 0px;
+    font-size: 23px;
+    margin-left: 483px;
+    position: relative;
+    top: -50px;
+    cursor:pointer;
+    background:none;
+}
+
+.header-with-icon {
+    display: flex;
+    align-items: end;
+   /* justify-content: space-between; */
+}
+
+    /*.header-with-icon .more-vert-header {
+        margin-left: 11px;*/ /* Adjust spacing as needed */
+    /*}*/
+.header-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+    .header-with-icon .more-vert-header {
+        margin-left: 5px; /* Adjust spacing as needed */
+    }
+
+.k-header {
+    position: relative;
+    padding-right: 20px; /* Adjust to ensure enough space for icon */
+}
+
+    .k-header .header-with-icon {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+        .k-header .header-with-icon i.more-vert-header {
+            position: absolute;
+            right: 5px; /* Position the icon to the far right of the header */
+        }
+
+.filter-box {
+    margin-top: -518px;
+    border: 1px solid lightgray;
+    width: 171px;
+    height: 135px;
+    padding-block-start: 4px;
+    z-index: 600;
+    margin-left: 152px;
+    background-color: white;
+    z-index: 1000;
+    overflow: auto;
+    position: relative;
+    display:none;
+    border-radius:3px;
+}
+.filter-icons {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 3px 9px;
+    margin-top: 2px;
+    color: black;
+    font-size:15px;
+}
+.filter {
+    color: dimgrey;
+}
+.k-cell-inner .k-grid-filter, .k-cell-inner .k-header-column-menu, .k-cell-inner .k-hierarchy-cell .k-icon {
+    text-align: center;
+    display: inline-block;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: none;
+}
+.k-checkbox {
+    border-color: rgba(0, 0, 0, .08);
+    background-color: #fff;
+    border: 1px solid lightgrey;
+}
+
+.k-checkbox-md {
+    width: 17px;
+    height: 17px;
+}
+.k-grid{
+    line-height:1.7;
+}
+.filter-icons:hover{
+    background-color:silver;
+}

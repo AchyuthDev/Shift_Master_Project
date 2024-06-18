@@ -1,0 +1,64 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/login.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <script src="~/shift_master_js/login.js"></script>
+
+</head>
+<body>
+  
+    <div class="form">
+        <div class="user">
+            <img  src="~/Images/LoginUser_Icon.jpg"/>
+        </div>
+        <div class="field">
+            <label>Email</label>
+            <input type="text" class="form-control" placeholder="xyz@gmail.com" id="email" />
+            <span id="emailError">Email is required</span>
+        </div>
+        
+           
+        
+        <div class="field" id="password">
+            <label>Password</label>
+            <input type="password" class="form-control" placeholder="*********" id="txtpassword" />
+            <span id="passwordError">Password is required</span>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                Remember Me
+            </label>
+        </div>
+
+        <div class="ForgotPassword">
+
+            <a href="#" id="forgotpassword">Forgot Password</a>
+
+        </div>
+
+        <button id="btnLogin">Login</button>
+
+        <div class="noaccount">
+            <b>  ---Don't have a account yet?---</b>
+        </div>
+        <button id="btnRegister">Register</button>
+
+        <div class="alert alert-danger " role="alert" id="InvalidErrorMessage">
+            <span>Invalid Email and Password</span>
+        </div>
+        
+    </div>
+</body>
+</html>
