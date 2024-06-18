@@ -6,7 +6,7 @@ var ShiftMasterVariables = {
     ShiftMasterGrid: "#ShiftMasterGrid",
     ShiftName: "#shiftname",
     ShiftStartTime: "#shiftStartTime",
-    ShiftEndTime:"#shiftEndTime",
+    ShiftEndTime:"#shiftEndTime", 
     ShiftTotalTime:"#TotalShiftTime",
     LunchStartTime:"#lunchStartTime",
     LunchEndTime:"#LunchEndTime",
@@ -48,6 +48,7 @@ $(document).ready(function () {
 
     $(ShiftMasterVariables.ToolbarbtnEdit).addClass("disabled-icon");
    $( ShiftMasterVariables.ToolbarbtnView).addClass("disabled-icon");
+    $(ShiftMasterVariables.ToolbarbtnDelete).addClass("disabled-icon"); 
     $(ShiftMasterVariables.ToolbarbtnDelete).addClass("disabled-icon"); 
 
    
