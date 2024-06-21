@@ -27,20 +27,20 @@
     cursor: pointer;
 }
 
-.action-icons {
+/*.action-icons {
     display: flex;
     align-items: center;
 }
 
     .action-icons .material-icons {
         margin: 0 8px;
-    }
+    }*/
 .k-grid-header th.custom-header {
     background-color: white;
     color: black;
     text-align: center;
     font-weight: 450;
-    padding: 10px;
+    padding: 8px;
     font-size: 1.02rem; /* Use rem units for better scalability */
 }
 .color {
@@ -49,10 +49,10 @@
 .k-grid-toolbar {
     background-color: white;
 }
-.toolbar-icons .material-icons {
+/*.toolbar-icons .material-icons {
     margin-right: 25px;  Adjust the value to control the spacing 
     cursor: pointer;
-}
+}*/
 
 /* Custom styles for the popup */
 #AddPopUp {
@@ -448,11 +448,11 @@ header {
     display: none;
     position: absolute;
     background: white;
-    padding: 10px;
+    padding: 0px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 160px;
-    height: 140px;
+    width: 190px;
+    height: 117px;
     z-index: 1000;
 }
 
@@ -473,14 +473,19 @@ header {
     border: none;
     padding: 2px 12px;
     border-radius: 3px;
-    text-align: left;
-    color: #30619f;
+    text-align: left; 
+    color: black;
 }
 
-.icon-btn i {
-    font-size: 24px;
-    margin-right: 5px;
-}
+    .icon-btn i {
+        font-size: 21px;
+        margin-right: 5px;
+        color: grey;
+    }
+    .icon-btn:hover{
+        background-color: #30619f;
+        color: white;
+    }
 
 .material-icons {
     color: #30619f;
@@ -792,13 +797,13 @@ body {
 .filter {
     color: dimgrey;
 }
-.k-cell-inner .k-grid-filter, .k-cell-inner .k-header-column-menu, .k-cell-inner .k-hierarchy-cell .k-icon {
+/*.k-cell-inner .k-grid-filter, .k-cell-inner .k-header-column-menu, .k-cell-inner .k-hierarchy-cell .k-icon {
     text-align: center;
     display: inline-block;
     -ms-flex-negative: 0;
     flex-shrink: 0;
     display: none;
-}
+}*/
 .k-checkbox {
     border-color: rgba(0, 0, 0, .08);
     background-color: #fff;
@@ -814,4 +819,61 @@ body {
 }
 .filter-icons:hover{
     background-color:silver;
+}
+
+.k-cell-inner .k-header-column-menu {
+    text-align: center;
+    display: inline-block;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;  
+     position: relative; 
+    left: -22px;
+}
+.k-menu:not(.k-context-menu) > .k-item {
+    color: black;
+}
+.k-i-arrow-e::before {
+    content: "\e005";
+    position: relative;
+    left: 46px;
+    font-size: 20px;
+}
+
+.k-icon {
+    width: 1em;
+    height: 1em;
+    outline: 0;
+    font-size: 18px;
+    font-family: WebComponentsIcons;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    text-decoration: none;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    top: 3px;
+   
+}
+.k-i-more-vertical {
+    color: #30619f;
+}
+.k-menu *, .k-menu ::after, .k-menu ::before, .k-menu-bar *, .k-menu-bar ::after, .k-menu-bar ::before {
+    box-sizing: border-box;
+    color: grey;
 }

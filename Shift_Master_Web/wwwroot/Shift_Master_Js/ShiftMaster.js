@@ -44,60 +44,12 @@ var ShiftMasterVariables = {
 $(document).ready(function () {
     var ApiBaseAdress = $(ShiftMasterVariables.ApiBaseAdress).val();
     console.log(typeof kendo); // Should output "object"
-
-
     $(ShiftMasterVariables.ToolbarbtnEdit).addClass("disabled-icon");
    $( ShiftMasterVariables.ToolbarbtnView).addClass("disabled-icon");
     $(ShiftMasterVariables.ToolbarbtnDelete).addClass("disabled-icon"); 
- 
 
-   
-
-    $("#column-icon").on('click', function () {
-        var grid = $(ShiftMasterVariables.Grid).data("kendoGrid");
-
-        // Get the current position of the icon
-        var offset = $(this).offset();
-        var left = offset.left + $(this).outerWidth();
-        var top = offset.top;
-
-        // Manually open the column menu
-        // Assuming the first column's menu will be opened as an example
-        var column = grid.columns[0]; // Adjust the index to the specific column
-        var menu = grid.wrapper.find(".k-header-menu");
-
-        // Position the menu
-        menu.css({
-            left: left + "px",
-            top: top + "px"
-        }).show();
-    });
   
-    $("#acending-icon").on('click', function () {
-       
-        // Get reference to the Kendo UI Grid
-        var grid = $("#grid").data("kendoGrid");
-
-        // Get the column to sort by (assuming it's "columnName")
-        var column = columnName; // Replace "columnName" with the actual column field name
-
-        // Sort the data in ascending order by the specified column
-        grid.dataSource.sort({ field: column, dir: "asc" });
-        $("#filter-box").hide();
-    });
-    $("#decending-icon").on('click', function () {
-
-        // Get reference to the Kendo UI Grid
-        var grid = $("#grid").data("kendoGrid");
-
-        // Get the column to sort by (assuming it's "columnName")
-        var column = columnName; // Replace "columnName" with the actual column field name
-
-        // Sort the data in ascending order by the specified column
-        grid.dataSource.sort({ field: column, dir: "desc" });
-        $("#filter-box").hide();
-    });
-
+        
     $("#txtSearch").on("input", function () {
 
         var value = $("#txtSearch").val().toLowerCase();
@@ -117,7 +69,7 @@ $(document).ready(function () {
             url: ApiBaseAdress + "/api/ShiftMaster/GetShiftNames",
             type: "GET",
             success: function (result) {
-                console.log(result);
+                console.log(result); 
                
                 $.each(result, function (index, name) {
                     console.log(name);
@@ -130,7 +82,7 @@ $(document).ready(function () {
                 });
                 
             },
-            error: function () {
+            error: function () {     
                 console.log("Error occurred while fetching shift names.");
                
             }
@@ -374,7 +326,7 @@ $(document).ready(function () {
         }
 
     }
-    //#endregion applying validations on add shift master
+    //#endregion applying validations on add shift master 
     // #region Initialization Ui Elements
     // Initialize Kendo UI CheckBox
     $(ShiftMasterVariables.NightShift).kendoCheckBox();
@@ -383,14 +335,7 @@ $(document).ready(function () {
    // $(ShiftMasterVariables.btnSave).kendoButton();
     $(ShiftMasterVariables.btnCancel).kendoButton();
     $(ShiftMasterVariables.btnEdit).kendoButton();
-
-
-    
-   
     // #endregion Initialization  
-
- 
-
 
     var popupWindow = $(ShiftMasterVariables.AddPopUp).kendoWindow({
         width: "800px",  // Set the desired width
@@ -456,7 +401,7 @@ $(document).ready(function () {
                 },
                 pageSize: 10
             },
-            height: 400,
+            height: 450,
            
             pageable: {
                 numeric: true,
@@ -466,10 +411,10 @@ $(document).ready(function () {
                 input: false,
                 info: false
             },
-            /*filterable: true,*/
-            /*sortable: { mode: "multiple" },*/
-           
-           
+            
+            columnMenu: true,
+            filterable: true,
+            sortable: true,
             resizable: { rows: true, columns: true },
             columns: [
                 {
@@ -487,27 +432,26 @@ $(document).ready(function () {
                 {
                     field: "shiftName",
                     title: "Shift Name",
-                    width: 135,
+                    width: '135px',
                     headerAttributes: { class: "custom-header" },
                     attributes: { class: "Shiftname-color" },
-                    headerTemplate: createHeaderTemplate("Shift Name","shiftName")
+                   // headerTemplate: createHeaderTemplate("Shift Name","shiftName")
                     
                                     
                 },
-                { field: "nightShift", title: "Night Shift", width: 130, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("Night Shift", "nightShift") },
-                { field: "shiftStartTime", title: "Start Time", width: 130, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("Start Time","shiftStartTime") },
-                { field: "shiftEndTime", title: "End Time", width: 120, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("End Time", "shiftEndTime") },
-                { field: "totalShiftTime", title: "Total Shift Time", width: 160, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("Total Shift Time", "totalShiftTime") },
-                { field: "lunchStartTime", title: "Lunch Start Time", width: 165, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("Lunch Start Time", "lunchStartTime") },
-                { field: "lunchEndTime", title: "Lunch End Time", width: 120, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("End Time", "lunchEndTime") },
-                { field: "totalLunchTime", title: "Total Lunch Time", width: 160, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("Total Lunch Time", "totalLunchTime") },
-                { field: "remark", title: "Remark", width: 120, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("Remark", "remark") },
-                { field: "isActive", title: "Active", width: 120, headerAttributes: { class: "custom-header" }, headerTemplate: createHeaderTemplate("Active", "isActive") },
+                { field: "nightShift", title: "Night Shift", width: 130, headerAttributes: { class: "custom-header" } },
+                { field: "shiftStartTime", title: "Start Time", width: 130, headerAttributes: { class: "custom-header" } },
+                { field: "shiftEndTime", title: "End Time", width: 120, headerAttributes: { class: "custom-header" } },
+                { field: "totalShiftTime", title: "Total Shift Time", width: 160, headerAttributes: { class: "custom-header" } },
+                { field: "lunchStartTime", title: "Lunch Start Time", width: 165, headerAttributes: { class: "custom-header" } },
+                { field: "lunchEndTime", title: "Lunch End Time", width: 120, headerAttributes: { class: "custom-header" } },
+                { field: "totalLunchTime", title: "Total Lunch Time", width: 160, headerAttributes: { class: "custom-header" } },
+                { field: "remark", title: "Remark", width: 120, headerAttributes: { class: "custom-header" } },
+                { field: "isActive", title: "Active", width: 120, headerAttributes: { class: "custom-header" } },
                 { field: "Action", title: "Actions", width: 120, template: "<div class='action-icons'><i data-id='#:shiftId#' class='material-icons more-vert-icon'>more_vert</i></div>", headerAttributes: { class: "custom-header" } }
             ],
-            /*columnMenu: true*/ /*// Enable column menu*/
-           
-           
+            
+          
             dataBound: function () {
                 $(ShiftMasterVariables.ToolbarbtnAdd).on("click", function () {
                    
@@ -729,9 +673,6 @@ $(document).ready(function () {
        
         $("#dialog-box").hide();
         ToolbarIconView(shiftid);
-       
-
-
     });
 
     //Handle the click event on Delete
