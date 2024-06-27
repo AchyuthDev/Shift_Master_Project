@@ -704,12 +704,8 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
-    display:none;
-   
+    display:none;  
 }
-
-
-
 .ErrorMessage {
     background-color: #FFF0F5;
     width: 520px;
@@ -722,8 +718,7 @@ body {
     display:none;
 }
 
-.btn-close {
-   
+.btn-close {  
     border: 0px;
     font-size: 23px;
     margin-left: 483px;
@@ -739,9 +734,6 @@ body {
    /* justify-content: space-between; */
 }
 
-    /*.header-with-icon .more-vert-header {
-        margin-left: 11px;*/ /* Adjust spacing as needed */
-    /*}*/
 .header-with-icon {
     display: flex;
     align-items: center;

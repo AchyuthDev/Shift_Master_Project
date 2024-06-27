@@ -24,7 +24,6 @@ var ShiftMasterVariables = {
     ApiBaseAdress: "#ApiBaseAdress",
     Grid: "#grid",
     ActionIcon: ".more-vert-icon",
-
     ToolbarbtnEdit: "#ToolbarbtnEdit",
     ToolbarbtnView: "#btnGrid",
     ToolbarbtnDelete: "#btnDelete",
@@ -37,33 +36,26 @@ var ShiftMasterVariables = {
     DialogBoxEdit: "#edit-icon",
     DialogBoxDelete: "#delete-icon"
 };
-
-
 //#endregion Shift Master Global Variables 
-
 $(document).ready(function () {
     var ApiBaseAdress = $(ShiftMasterVariables.ApiBaseAdress).val();
     console.log(typeof kendo); // Should output "object"
     $(ShiftMasterVariables.ToolbarbtnEdit).addClass("disabled-icon");
    $( ShiftMasterVariables.ToolbarbtnView).addClass("disabled-icon");
     $(ShiftMasterVariables.ToolbarbtnDelete).addClass("disabled-icon"); 
-
-  
-        
+      
     $("#txtSearch").on("input", function () {
-
         var value = $("#txtSearch").val().toLowerCase();
         $("#grid tr").filter(function () {
             var shiftName = $(this).find("td:eq(2)").text().toLowerCase(); // 2 refers to the index of "Shift Name" column
             $(this).toggle(shiftName.indexOf(value) > -1);
         });
     });
-  
-   
+
     var checkedIds = [];
     //#region Checking existing Shift Name
    
-    var Exist = true;
+   var Exist = true;
     function CheckingExistingName(ShiftName) {
         $.ajax({
             url: ApiBaseAdress + "/api/ShiftMaster/GetShiftNames",
@@ -87,11 +79,8 @@ $(document).ready(function () {
                
             }
         });
-    }
-   
+    } 
     //#endregion
-
-
     //#region time Difference Caluclation part
     $(ShiftMasterVariables.ShiftEndTime).on('change', function () {
 
@@ -138,20 +127,16 @@ $(document).ready(function () {
             $(ShiftMasterVariables.ShiftStartTimeErrorMsg).hide();
         }
     });
-
-
     $(ShiftMasterVariables.LunchEndTime).on('change', function () {
         var endTime = $(ShiftMasterVariables.LunchEndTime).val();
         var startTime = $(ShiftMasterVariables.LunchStartTime).val();
         var TotalTime = calculateTimeDifference24Hour(startTime, endTime);
         $(ShiftMasterVariables.TotalLunchTime).val(TotalTime);
     });
-
     function parseTime24Hour(timeStr) {
         const [hours, minutes] = timeStr.split(':');
         return new Date(`1970-01-01T${hours.padStart(2, '0')}:${minutes.padStart(2, '0')}:00`);
     }
-
     function calculateTimeDifference24Hour(startTime, endTime) {
         const startDate = parseTime24Hour(startTime);
         const endDate = parseTime24Hour(endTime);
@@ -172,9 +157,7 @@ $(document).ready(function () {
 
     //#endregion time Difference Caluclation part
 
-
     //#region applying validations on add shift master
-
     $(ShiftMasterVariables.ShiftName).on('input', function () {
         var shiftname = $(ShiftMasterVariables.ShiftName).val();
         if (!/^[a-zA-Z]{1}[a-z\sA-Z]*$/.test(shiftname)) {
@@ -302,6 +285,7 @@ $(document).ready(function () {
                     success: function () {
 
                         popupWindow.center().close();
+                        $(".ErrorMessage").css("background-color", "#d4edda");
                         $("#Errorheading").text("Success!");
                         $("#MessageText").text("Shift Added Successfully ").show();
                         $("#Errorheading").css("color", "green");
@@ -326,17 +310,16 @@ $(document).ready(function () {
         }
 
     }
-    //#endregion applying validations on add shift master 
+    //#endregion applying validations on add shift master
+
     // #region Initialization Ui Elements
     // Initialize Kendo UI CheckBox
     $(ShiftMasterVariables.NightShift).kendoCheckBox();
     $(ShiftMasterVariables.Active).kendoCheckBox();
     // Initialize Kendo UI Button
-   // $(ShiftMasterVariables.btnSave).kendoButton();
     $(ShiftMasterVariables.btnCancel).kendoButton();
     $(ShiftMasterVariables.btnEdit).kendoButton();
     // #endregion Initialization  
-
     var popupWindow = $(ShiftMasterVariables.AddPopUp).kendoWindow({
         width: "800px",  // Set the desired width
         height: "550px", // Set the desired height
@@ -346,12 +329,7 @@ $(document).ready(function () {
             "Close"
         ]
     }).data("kendoWindow");
-
-    
     // #endregion Initialize the Kendo UI Window
-
-    
-
     // Bind the activate event dynamically
     function bindActivateForFocus(elementId) {
         popupWindow.unbind("activate"); // Unbind previous event
@@ -359,9 +337,7 @@ $(document).ready(function () {
             $(elementId).focus();
         });
     }
-
     GetDataFromApi();
-
     function GetDataFromApi() {
         $.ajax({
             url: ApiBaseAdress+"/api/ShiftMaster/GetAllShifts?$filter=isDelete eq false",
@@ -376,7 +352,6 @@ $(document).ready(function () {
             }
         });
     }
-
     //#region Binding the Data Into Shift Master Grid 
     function BindData(response) {
         $(ShiftMasterVariables.Grid).kendoGrid({
@@ -401,8 +376,7 @@ $(document).ready(function () {
                 },
                 pageSize: 10
             },
-            height: 450,
-           
+            height: 450,          
             pageable: {
                 numeric: true,
                 refresh: true,
@@ -410,8 +384,7 @@ $(document).ready(function () {
                 previousNext: true,
                 input: false,
                 info: false
-            },
-            
+            },          
             columnMenu: true,
             filterable: true,
             sortable: true,
@@ -449,10 +422,8 @@ $(document).ready(function () {
                 { field: "remark", title: "Remark", width: 120, headerAttributes: { class: "custom-header" } },
                 { field: "isActive", title: "Active", width: 120, headerAttributes: { class: "custom-header" } },
                 { field: "Action", title: "Actions", width: 120, template: "<div class='action-icons'><i data-id='#:shiftId#' class='material-icons more-vert-icon'>more_vert</i></div>", headerAttributes: { class: "custom-header" } }
-            ],
-            
-          
-            dataBound: function () {
+            ],          
+           dataBound: function () {
                 $(ShiftMasterVariables.ToolbarbtnAdd).on("click", function () {
                    
                     $(ShiftMasterVariables.ShiftName).val('');
@@ -497,8 +468,7 @@ $(document).ready(function () {
                    
                     popupWindow.center().open();
                   
-                });
-               
+                });              
                 // Use event delegation to handle click events on dynamically generated icons
                 $(ShiftMasterVariables.Grid).off('click', ShiftMasterVariables.ActionIcon).on('click', ShiftMasterVariables.ActionIcon, function () {
                     var id = $(this).data('id');
@@ -519,8 +489,6 @@ $(document).ready(function () {
 
                    
                 });
-
-
                 // Handle checkbox change event
                 $(ShiftMasterVariables.Grid).off('change', 'input[type="checkbox"]').on('change', 'input[type="checkbox"]', function () {
                     var checked = $(this).is(':checked');
@@ -568,86 +536,29 @@ $(document).ready(function () {
                         $("#ToolbarbtnEdit,#btnGrid,#btnDelete").css("pointer-events", "none");
                     }
                 });
-
                 // Add click event for the "more_vert" icons in the header except for the "Action" column
                 $(ShiftMasterVariables.Grid).off('click', '.more-vert-header').on('click', '.more-vert-header', function (event) {
                     handleIconClick(event);
 
                 });
-
             }
         });
     }
-    // Function to create a header template with "more_vert" icon
-    function createHeaderTemplate(title,filedname) {
-        return `
-        <div class='header-with-icon'>
-            ${title}
-            <i class='material-icons more-vert-header' data-colunmname='${filedname}'  onclick='handleIconClick(event)' id='Header-morevert-icon' style='cursor:pointer;vertical-align:middle;'>more_vert</i>
-        </div>
-    `;
-    }
-
     $(window).resize(function () {
         var grid = $(ShiftMasterVariables.Grid).data("kendoGrid");
         if (grid) {
             grid.resize(); // Resize grid on window resize
         }
-    });
-    // Function to handle the click event
-  
-    window.handleIconClick = function (event) {
-       
-
-        event.stopPropagation(); // Prevent event propagation
-        var icon = event.currentTarget; // Get the clicked icon
-
-          columnName = $(icon).data('colunmname');
-
-        var $icon = $(event.target); // Get the clicked icon
-        var $filterBox = $('#filter-box'); // Reference to the filter box
-
-        // Get the icon's position relative to the document
-        var offset = $icon.offset();
-        var iconHeight = $icon.outerHeight();
-        var iconWidth = $icon.outerWidth();
-        var filterBoxWidth = $filterBox.outerWidth();
-
-        // Calculate the position for the filter-box to align it below the icon
-        var top = offset.top + iconHeight;
-        var left = offset.left + iconWidth - filterBoxWidth;
-
-        // Set the position of the filter-box and display it
-        $filterBox.css({
-            top: top + 'px',
-            left: left + 'px',
-            display: 'block'
-        });
-
-        // Remove the event listener after execution if needed
-        $(icon).off('click', handleIconClick);
-    };
-   
-
-    $(document).on('click', function (event) {
-        var $filterBox = $('#filter-box');
-        if (!$filterBox.is(event.target) && $filterBox.has(event.target).length === 0) {
-            $filterBox.hide();
-        }
-    });
+    });  
     //#endregion Binding the Data Into Shift Master Grid 
 
-
-
     //#region Button Click Events
-
     // Hide the dialog box if user clicks outside of it
     $(document).on("click", function (event) {
         if (!$(event.target).closest(".dialog-box, .more-vert-icon").length) {
             $("#dialog-box").hide();
         }
     });
-
     //refress icon event
     $(ShiftMasterVariables.btnRefresh).on("click", function () {
         $("#ToolbarbtnEdit,#btnGrid,#btnDelete").css("opacity", "0.5"); // Increase to full opacity
@@ -670,7 +581,6 @@ $(document).ready(function () {
     //Handle the click event on View
     $(document).on("click",ShiftMasterVariables.DialogBoxView, function () {
         var shiftid = $('#hiddenfield').val();
-       
         $("#dialog-box").hide();
         ToolbarIconView(shiftid);
     });
@@ -754,17 +664,12 @@ $(document).ready(function () {
             }
         });
 
-    }
-
-    
+    }  
     //#endregion
 
 
-    //#region Toolbar icons click events
-
+    //#region Toolbar icons click event
     $(ShiftMasterVariables.ToolbarbtnEdit).on("click", function () {
-
-
         if (checkedIds.length == 1) {
             $("#hiddenfield").attr("value", checkedIds[0]);
             UpdatePopUp(checkedIds[0]);
@@ -775,21 +680,14 @@ $(document).ready(function () {
             $("#MessageText").text("Please Select One Shift Only To Edit ").show();
             $("#Errorheading").css("color", "red");
             $(".ErrorMessage").show();
-
             $("#overlay").fadeIn(400);
-
-            // Set a timer to hide the message after 3 seconds with a fade-out effect
             setTimeout(function () {
                 $("#overlay").fadeOut(400);
             }, 3000); // 3000 milliseconds = 3 second
-        }
-
-       
+        } 
     });
     $(ShiftMasterVariables.ToolbarbtnView).on("click", function () {
-
         if (checkedIds.length == 1) {
-           
             ToolbarIconView(checkedIds[0]);
         }
         else {
@@ -798,17 +696,13 @@ $(document).ready(function () {
             $("#MessageText").text("Please Select One Shift Only To View ").show();
             $("#Errorheading").css("color", "red");
             $(".ErrorMessage").show();
-
             $("#overlay").fadeIn(400);
-
-            // Set a timer to hide the message after 3 seconds with a fade-out effect
             setTimeout(function () {
                 $("#overlay").fadeOut(400);
             }, 3000); // 3000 milliseconds = 3 second
         }
-      
     });
-
+    //Shift Delete Event
     $(ShiftMasterVariables.ToolbarbtnDelete).on("click", function () {
         $("#customModal").show();
         $("#btnConformDelete").on("click", function () {
@@ -819,12 +713,10 @@ $(document).ready(function () {
         $("#btnConfirmCancel").on("click", function () {
             $("#customModal").hide();
         });
-       
     });
     //#endregion
 
     //#region Update and View display pop up functions
-
     function UpdatePopUp(shiftid) {
         $.ajax({
             url: ApiBaseAdress + "/api/ShiftMaster/GetShiftDetails?id=" + shiftid,
@@ -846,17 +738,12 @@ $(document).ready(function () {
                 $(ShiftMasterVariables.TotalLunchTime).val(response.totalLunchTime);
                 $(ShiftMasterVariables.TotalLunchTime).prop("disabled", true);
                 $(ShiftMasterVariables.NightShift).prop("disabled", true);
-
                 if (response.nightShift == "true") {
-
                     $(ShiftMasterVariables.NightShift).prop("checked", true);
-
                 }
                 else {
-
                     $(ShiftMasterVariables.NightShift).prop("checked", false);
                 }
-
                 $(ShiftMasterVariables.Remark).val(response.remark);
                 $(ShiftMasterVariables.Remark).prop("disabled", false);
                 if (response.isActive == true) {
@@ -869,13 +756,10 @@ $(document).ready(function () {
                 var newTitle = "Shift : Edit";
                 popupWindow.title(newTitle);
                 $(ShiftMasterVariables.btnSave).text("Update");
-
                 // Bind activate event to focus shiftname textbox
                 bindActivateForFocus(ShiftMasterVariables.Remark);
-
                 $(ShiftMasterVariables.btnSave).show();
                 $(ShiftMasterVariables.btnCancel).show();
-
                 $(".ValidationErrors").hide();
                 $("#ShiftNameIcon").hide();
                 $("#ShiftStartTimeIcon").hide();
@@ -885,10 +769,8 @@ $(document).ready(function () {
             error: function () {
 
             }
-
         });
     }
-
     function ToolbarIconView(shiftid) {
         $.ajax({
             url: ApiBaseAdress + "/api/ShiftMaster/GetShiftDetails?id=" + shiftid,
@@ -910,17 +792,12 @@ $(document).ready(function () {
                 $(ShiftMasterVariables.TotalLunchTime).val(response.totalLunchTime);
                 $(ShiftMasterVariables.TotalLunchTime).prop("disabled", true);
                 $(ShiftMasterVariables.NightShift).prop("disabled", true);
-
                 if (response.nightShift == "true") {
-
                     $(ShiftMasterVariables.NightShift).prop("checked", true);
-
                 }
                 else {
-
                     $(ShiftMasterVariables.NightShift).prop("checked", false);
                 }
-
                 $(ShiftMasterVariables.Remark).val(response.remark);
                 $(ShiftMasterVariables.Remark).prop("disabled", true);
                 if (response.isActive == true) {
@@ -932,46 +809,32 @@ $(document).ready(function () {
                 $(ShiftMasterVariables.Active).prop("disabled", true);
                 var newTitle = "Shift : View";
                 popupWindow.title(newTitle);
-
                 $(ShiftMasterVariables.btnCancel).show();
                 $(ShiftMasterVariables.btnSave).hide();
-               
-
                 $(".ValidationErrors").hide();
                 $("#ShiftNameIcon").hide();
                 $("#ShiftStartTimeIcon").hide();
                 $("#ShiftEndTimeIcon").hide();
-                
-
-
-
                 popupWindow.center().open();
             },
             error: function () {
 
             }
-
         });
     }
-
     function ToolBarIconDelete(shiftid) {
         $.ajax({
             url: ApiBaseAdress + "/api/ShiftMaster/DeleteShift?id=" + shiftid,
             type: "delete",
             success: function (response) {
-
                 $("#Errorheading").text("Success!");
                 $("#MessageText").text("Shift Deleted Successfully ").show();
                 $("#Errorheading").css("color", "green");
                 $(".ErrorMessage").show();
-
                 $("#overlay").fadeIn(400);
-
-                // Set a timer to hide the message after 3 seconds with a fade-out effect
                 setTimeout(function () {
                     $("#overlay").fadeOut(400);
                 }, 3000); // 3000 milliseconds = 3 second
-
                 $("#customModal").hide();
                 GetDataFromApi();
                 GetDataFromApi();
@@ -983,26 +846,18 @@ $(document).ready(function () {
             }
         });
     }
-
     //#endregion
-
-
     $("#ExportPdfExcel").click(function () {
         $("#dropdownMenu").toggle();
     });
-
     $("#exportToExcelSelected").on('click', function () {
-
         if (checkedIds.length == 0) {
             $(".ErrorMessage").css("background-color", "#FFF0F5");
             $("#Errorheading").text("Error!");
             $("#MessageText").text("Please Select Atlest One Shift  To Excel Export ").show();
             $("#Errorheading").css("color", "red");
             $(".ErrorMessage").show();
-
             $("#overlay").fadeIn(400);
-
-            // Set a timer to hide the message after 3 seconds with a fade-out effect
             setTimeout(function () {
                 $("#overlay").fadeOut(400);
             }, 3000); // 3000 milliseconds = 3 second
@@ -1015,7 +870,6 @@ $(document).ready(function () {
             console.log(data);
             var RecordData = [];
             for (var j = 0; j < checkedIds.length; j++) {
-
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].shiftId === checkedIds[j]) {
                         RecordData.push(data[i]); // Push the found record into the array
@@ -1040,21 +894,16 @@ $(document).ready(function () {
                     // add all the necessary columns here
                 });
             });
-
             // Convert JSON to sheet
             var worksheet = XLSX.utils.json_to_sheet(jsonData);
-
             // Create a new workbook
             var workbook = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(workbook, worksheet, "ShiftMaster");
-
             // Export the workbook
             XLSX.writeFile(workbook, "ShiftMaster.xlsx");
         }
-
         GetDataFromApi();
-        GetDataFromApi();
-       
+        GetDataFromApi();   
     });
     // Export grid data to Excel
     // Export all data to Excel
@@ -1063,9 +912,7 @@ $(document).ready(function () {
             var data = grid.dataSource.data();
             console.log(grid);
             console.log(data);
-
             var jsonData = [];
-
             data.forEach(function (item) {
                 jsonData.push({
                     "ShiftName": item.shiftName,
@@ -1081,19 +928,14 @@ $(document).ready(function () {
                     // add all the necessary columns here
                 });
             });
-
             // Convert JSON to sheet
             var worksheet = XLSX.utils.json_to_sheet(jsonData);
-
             // Create a new workbook
             var workbook = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(workbook, worksheet, "ShiftMaster");
-
             // Export the workbook
             XLSX.writeFile(workbook, "ShiftMaster.xlsx");
-        });
-
-   
+        });  
     $(".btn-close").on("click", function () {
         $("#overlay").hide();
         $(".ErrorMessage").hide();

@@ -17,17 +17,22 @@ namespace Shift_Master_Api.ConcreteClasses
         {
             try
             {
-                _context.ShiftTb.Add(ShiftDetails);
-                int result=_context.SaveChanges();
-                return result;
+                var exist=_context.ShiftTb.Any(e=>e.ShiftName==ShiftDetails.ShiftName);
+                if (exist == null)
+                {
+                    _context.ShiftTb.Add(ShiftDetails);
+                    int result = _context.SaveChanges();
+                    return result;
+                }
+                else {
+                    return 0;
+                }
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
-
         public int DeleteShift(int id)
         {
             try
@@ -45,7 +50,6 @@ namespace Shift_Master_Api.ConcreteClasses
           
            
         }
-
         public List<ShiftNamesDto> GetAllShiftNames()
         {
             try
@@ -64,11 +68,8 @@ namespace Shift_Master_Api.ConcreteClasses
             {
 
                 throw;
-            }
-           
-           
+            }          
         }
-
         public List<Shift> GetAllShifts() 
         {
             try
